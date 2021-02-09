@@ -16,11 +16,33 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-       
+        public void Add(Car car)
+        {
+            if (car.DailyPrice > 0 && car.Description.Length >= 2)
+            {
+                _carDal.Add(car);
+                Console.WriteLine("Araba basariyla eklendi!");
+            }
+            else
+            {
+                Console.WriteLine("Araba açıklaması en az 2 karakter ve günlük ücreti 0 dan büyük olmalıdır");
+            }
+        }
 
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
+        }
+
+        public List<Car> GetCarsByBrandId(int id)
+        {
+            return _carDal.GetAll(p=>p.BrandId==id);
+        }
+
+
+        public List<Car> GetCarsByColorId(int id)
+        {
+            return _carDal.GetAll(p => p.ColorId == id);
         }
     }
 }
