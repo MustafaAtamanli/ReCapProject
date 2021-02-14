@@ -1,14 +1,14 @@
 ﻿using Core.DataAccess;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IColorDal : IEntityRepository<Color>
+    public interface IRentalDal:IEntityRepository<Rental>
     {
-        void Add(System.Drawing.Color color);
-        void Delete(System.Drawing.Color color);
+        List<RentalDto> GetRentalDetails();
     }
 }
