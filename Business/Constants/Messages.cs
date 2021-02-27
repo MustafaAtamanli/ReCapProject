@@ -15,5 +15,6 @@ namespace Business.Constants
         public static string Deleted = "Silme işlemi başarılı";
         public static string DeletedInvalid = "Silme işlemi başarısız";
         public static string Listed = "Listeleme işlemi başarılı";
+        
     }
 }
