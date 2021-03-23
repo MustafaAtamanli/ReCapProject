@@ -14,5 +14,5 @@ namespace Business.Abstract
         IDataResult<List<Color>> GetAll();
         
     }
-}
+
 }
