@@ -78,5 +78,12 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarsDetails());
         }
+
+        [ValidationAspect(typeof(CarValidator))]
+        public IResult Update(Car car)
+        {
+            _carDal.Update(car);
+            return new SuccessResult(Messages.Updated);
+        }
     }
 }
