@@ -1,5 +1,14 @@
 # Rent A Car-Araç Kiralama Sistemi
 
+# Bilgilendirme
+
+-Bu proje, Mustafa Atamanlı tarafından Engin DEMİROĞ'un Kodlama.io sitesi üzerinden ücretsiz olarak yaptığı Yazılım Geliştirici Yetiştirme Kampı'nda verilen ödevler sonucunda geliştirilmiştir.
+
+-Linkedin: https://www.linkedin.com/in/mustafa-atamanlı-708792201/
+
+-E-Mail: Atamanlimustafa@gmail.com
+
+
 ## Layers
 
 - Business : Sunum katmanından gelen bilgileri gerekli koşullara göre işlemek veya denetlemek için oluşturulan Business Katmanıdır. Abstract klasörü soyut nesneleri, Concrete klasörü somut nesneleri tutmak için oluşturulmuştur.Utilities ve ValidationRules klasörlerinde validation işlemlerinin gerçekleştiği classlar mevcuttur.
