@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entities.DTOs;
 
 namespace WebAPI.Controllers
 {
@@ -32,6 +33,28 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
+        [HttpGet("getbymail")]
+        public IActionResult GetByMail(string email)
+        {
+            var result = _userService.GetByMail(email);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet("getbyuserid")]
+        public IActionResult GetByUserId(int id)
+        {
+            var result = _userService.GetUserById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Message);
+        }
+
         [HttpPost("add")]
         public IActionResult Add(User user)
         {
@@ -44,14 +67,19 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(User user)
+        public IActionResult Update(UserForRegisterDto user)
         {
-            var result = _userService.Update(user);
-            if (result.Success)
+            var userExists = _userService.GetByMail(user.Email);
+            if (!userExists.Success)
             {
-                return Ok(result);
+                return BadRequest(userExists.Message);
             }
-            return BadRequest(result.Message);
+            var updateResult = _userService.Update(user, user.Password);
+            if (updateResult.Success)
+            {
+                return Ok(updateResult);
+            }
+            return BadRequest(updateResult.Message);
         }
 
         [HttpPost("delete")]
