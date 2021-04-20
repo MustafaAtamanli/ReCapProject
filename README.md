@@ -4,7 +4,7 @@
 
 -Bu proje, Mustafa Atamanlı tarafından Engin DEMİROĞ'un Kodlama.io sitesi üzerinden ücretsiz olarak yaptığı Yazılım Geliştirici Yetiştirme Kampı'nda verilen ödevler sonucunda geliştirilmiştir.
 
--Linkedin: https://www.linkedin.com/in/mustafa-atamanlı-708792201/
+-LinkedIn: https://www.linkedin.com/in/mustafa-atamanlı-708792201/
 
 -E-Mail: Atamanlimustafa@gmail.com
 
